@@ -1,0 +1,26 @@
+version: '3.6'
+
+services:
+  # strapi:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "1337:1337"
+  #   environment:
+  #     NODE_ENV: production
+  #   volumes:
+  #     - ./api-leslys-main:/src/app
+  #   command: yarn start
+
+  react:
+    build:
+      context: ./site-leslys-main
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./site-leslys-main:/src/app 
+    command: yarn start 
